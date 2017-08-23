@@ -13,33 +13,36 @@
 </head>
 
 <body>
-<div class="content row">
-    <div class="left col-md-5">
-        <form role="form" accept="" name="trackHBF" action="" method="post">
-            <h5>通过HBASE查询轨迹信息 ：</h5>
-            <div class="form-group">
-                <span>bizCode: </span><input name="bizCode" value="">
-            </div>  
-             <div class="form-group">
-                <span>deviceId: </span><input name="deviceId" value="">
-            </div> 
-            <div class="form-group">
-                <span>size: </span><input name="size" value="">
-            </div>  
-             <div class="form-group">
-                <span>qpsTime: </span><input name="qpsTime" value="">
-            </div> 
-            <div class="form-group">
-                <span>startTimestamp: </span><input name="startTimestamp" value="">
-            </div>  
-             <div class="form-group">
-                <span>endTimestamp: </span><input name="endTimestamp" value="">
-            </div> 
-            <input type="button" id="search" value="查询" onclick="que();">
-        </form>
+<div class="container">
+    <div class="row">
+        <!--LEFT-->
+        <div class="left col-lg-5">
+            <form role="form" accept="" name="trackHBF" action="" method="post">
+                <h5>通过HBASE查询轨迹信息 ：</h5>
+                <div class="form-group">
+                    <span>bizCode: </span><input name="bizCode" value="">
+                </div>
+                <div class="form-group">
+                    <span>deviceId: </span><input name="deviceId" value="">
+                </div>
+                <div class="form-group">
+                    <span>size: </span><input name="size" value="">
+                </div>
+                <div class="form-group">
+                    <span>qpsTime: </span><input name="qpsTime" value="">
+                </div>
+                <div class="form-group">
+                    <span>startTimestamp: </span><input name="startTimestamp" value="">
+                </div>
+                <div class="form-group">
+                    <span>endTimestamp: </span><input name="endTimestamp" value="">
+                </div>
+                <input type="button" id="search" value="查询" onclick="que();">
+            </form>
+        </div>
+        <!--RIGHT-->
+        <div class="right col-lg-6" id="jsoneditor" ></div>
     </div>
-    <div class="right col-md-7" id="jsoneditor" ></div>
-
 </div>
 <!--提交查询缓冲-->
 <div id="loading">
