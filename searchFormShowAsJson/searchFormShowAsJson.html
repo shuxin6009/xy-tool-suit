@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>查询表单结果显示为json格式</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/searchFormShowAsJson.css" rel="stylesheet" type="text/css">
+    <link href="dist/css/jsoneditor.min.css" rel="stylesheet" type="text/css">
+    <script src="dist/js/jsoneditor.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/ts.js"></script>
+</head>
+
+<body>
+<div class="content row">
+    <div class="left col-md-5">
+        <form role="form" accept="" name="trackHBF" action="" method="post">
+            <h5>通过HBASE查询轨迹信息 ：</h5>
+            <div class="form-group">
+                <span>bizCode: </span><input name="bizCode" value="">
+            </div>  
+             <div class="form-group">
+                <span>deviceId: </span><input name="deviceId" value="">
+            </div> 
+            <div class="form-group">
+                <span>size: </span><input name="size" value="">
+            </div>  
+             <div class="form-group">
+                <span>qpsTime: </span><input name="qpsTime" value="">
+            </div> 
+            <div class="form-group">
+                <span>startTimestamp: </span><input name="startTimestamp" value="">
+            </div>  
+             <div class="form-group">
+                <span>endTimestamp: </span><input name="endTimestamp" value="">
+            </div> 
+            <input type="button" id="search" value="查询" onclick="que();">
+        </form>
+    </div>
+    <div class="right col-md-7" id="jsoneditor" ></div>
+
+</div>
+<!--提交查询缓冲-->
+<div id="loading">
+    <img src="images/loading.gif">
+</div>
+</body>
+<script type="text/javascript">
+
+    /*json编辑器*/
+    var container = document.getElementById('jsoneditor');
+    var options = {
+        mode: 'tree',
+        modes: ['code', 'form', 'text', 'tree', 'view'], // allowed modes
+        onError: function (err) {
+            alert(err.toString());
+        },
+        onModeChange: function (newMode, oldMode) {
+            console.log('Mode switched from', oldMode, 'to', newMode);
+        }
+    };
+    var json = {
+        "array": [1, 2, 3],
+        "boolean": true,
+        "null": null,
+        "number": 123,
+        "object": {"a": "b", "c": "d"},
+        "string": "Hello World"
+    };
+    var editor = new JSONEditor(container, options, json);
+</script>
+</html>

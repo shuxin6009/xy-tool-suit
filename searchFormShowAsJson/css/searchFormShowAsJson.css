@@ -1,0 +1,56 @@
+
+/*css*/
+body{
+    height: 970px;
+    min-height: 970px;
+}
+.content {
+    width: 100%;
+    height: 100%;
+    padding:20px 15px;
+    position: relative;
+}
+.left {
+    float: left;
+    width: 50%;
+    height: 100%;
+   /* border-right: 2px solid #ccc;*/
+}
+.right {
+    float: right;
+    width: 49%;
+    height: 100%;
+}
+.left input {
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+}
+#search{
+    background: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+#loading{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background: #000;
+    opacity: 0.2;
+    filter:alpha(opacity=0.2); 
+    display: none;
+}
+#loading img{
+    position: fixed;
+    top:30%;
+    left:47.5%;
+}
+.left span{
+    width:130px;
+    display: block;
+    float: left;
+    padding: 5px 10px;
+}
